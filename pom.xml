@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.futokiyo</groupId>
+  <artifactId>tsukiji</artifactId>
+  <version>0.1.0</version>
+  <packaging>pom</packaging>
+
+  <name></name>
+  <description>
+    
+  </description>
+
+  <properties>
+    <surefire.forkCount>1</surefire.forkCount>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+    <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+    <majalis.framework.base.version>0.0.1</majalis.framework.base.version>
+
+  </properties>
+
+  <repositories>
+    <!-- Bootstrap repository to locate the parent pom when the parent pom has not been build locally. -->
+  </repositories>
+
+  <scm>
+    <!-- TO BE DELIVERIED -->
+  </scm>
+
+  <modules>
+    <module>jounai</module>
+	<module>jougai</module>
+  </modules>
+  
+  <distributionManagement>
+  </distributionManagement>
+
+  <dependencyManagement>
+  </dependencyManagement>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <forkCount>${surefire.forkCount}</forkCount>
+            <reuseForks>true</reuseForks>
+            <runOrder>hourly</runOrder>
+          </configuration>
+        </plugin>
+        
+        <plugin>
+		   <artifactId>maven-deploy-plugin</artifactId>
+		   <version>${maven-deploy-plugin.version}</version>
+		   <executions>
+			  <execution>
+				 <id>default-deploy</id>
+				 <phase>deploy</phase>
+				 <goals>
+					<goal>deploy</goal>
+				 </goals>
+			  </execution>
+		   </executions>
+		</plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+  </profiles>
+  
+
+
+</project>
