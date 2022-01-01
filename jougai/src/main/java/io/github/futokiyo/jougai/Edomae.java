@@ -3,7 +3,6 @@ package io.github.futokiyo.jougai;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Named;
 
